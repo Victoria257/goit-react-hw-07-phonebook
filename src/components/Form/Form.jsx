@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import css from './Form.module.css';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContacts } from 'redux/contactsSlice';
 
-export function Form({ onSubmit, addContacts }) {
+export function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
   const contacts = useSelector(state => state.contacts.contacts);
+  const dispatch = useDispatch();
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -25,8 +26,11 @@ export function Form({ onSubmit, addContacts }) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    onSubmit({ name, number });
-    addContacts({ name, number });
+
+    const newName = event.target.name.value;
+    const newNumber = event.target.elements.number.value;
+
+    dispatch(addContacts({ newName, newNumber }));
     if (
       [...contacts].find(contact =>
         contact.name.includes(event.target.name.value)
@@ -78,8 +82,3 @@ export function Form({ onSubmit, addContacts }) {
     </div>
   );
 }
-
-Form.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  addContacts: PropTypes.func.isRequired,
-};

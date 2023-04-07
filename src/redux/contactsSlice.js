@@ -8,10 +8,11 @@ const contactsSlice = createSlice({
   },
   reducers: {
     addContacts(state, action) {
+      console.log(action.payload);
       const contact = {
         id: nanoid(7),
-        name: action.payload.name,
-        number: action.payload.number,
+        name: action.payload.newName,
+        number: action.payload.newNumber,
       };
 
       const theSameName = state.contacts.find(

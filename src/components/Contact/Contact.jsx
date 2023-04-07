@@ -1,7 +1,6 @@
 import css from 'components/Contact/Contact.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { delContact } from 'redux/contactsSlice';
-import PropTypes from 'prop-types';
 
 export const Contact = () => {
   const contacts = useSelector(state => state.contacts.contacts);
@@ -29,8 +28,4 @@ export const Contact = () => {
       </button>
     </li>
   ));
-};
-
-Contact.propTypes = {
-  delContact: PropTypes.func,
 };
