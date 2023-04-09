@@ -4,10 +4,11 @@ import FilterContacts from './FilterContacts/FilterContacts';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
-import { createAsyncThunk } from '@reduxjs/toolkit';
 
 function App() {
   const dispatch = useDispatch();
+  // const isLoading = state => state.contacts.isLoading;
+  // const error = state => state.contacts.error;
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -18,6 +19,7 @@ function App() {
       <Form />
       <ContactList>
         <FilterContacts />
+        {/* {isLoading && !error && <b>Request in progress...</b>} */}
       </ContactList>
     </div>
   );

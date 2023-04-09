@@ -12,4 +12,5 @@
 .delButton {
   border: solid 1px rgb(98, 172, 172);
   border-radius: 5px;
+  cursor: pointer;
 }
