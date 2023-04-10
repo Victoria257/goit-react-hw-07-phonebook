@@ -1,7 +1,7 @@
 .contact {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  gap: 10px;
   border: solid 1px rgb(98, 172, 172);
   border-radius: 5px;
   margin-top: 10px;
@@ -9,7 +9,15 @@
   background-color: rgb(217, 225, 225);
 }
 
+.spans {
+  width: 300px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .delButton {
+  padding: 0 20px;
   border: solid 1px rgb(98, 172, 172);
   border-radius: 5px;
   cursor: pointer;

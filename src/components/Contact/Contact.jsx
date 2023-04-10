@@ -16,9 +16,12 @@ export const Contact = () => {
 
   const visibleContacts = getVisibleContacts();
 
-  return visibleContacts.map(({ name, number, id }) => (
+  return visibleContacts.map(({ name, phone, id }) => (
     <li className={css.contact} key={id}>
-      {name}: {number}
+      <p className={css.spans}>
+        <span>{name}:</span> <span>{phone}</span>
+      </p>
+
       <button
         className={css.delButton}
         type="button"
