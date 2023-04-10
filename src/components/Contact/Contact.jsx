@@ -19,7 +19,7 @@ export const Contact = () => {
   return visibleContacts.map(({ name, phone, id }) => (
     <li className={css.contact} key={id}>
       <p className={css.spans}>
-        <span>{name}:</span> <span>{phone}</span>
+        <span>{name}</span> <span>{phone}</span>
       </p>
 
       <button
